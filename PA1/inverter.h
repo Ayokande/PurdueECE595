@@ -1,4 +1,4 @@
-#ifndef INVERTER_H
+` #ifndef INVERTER_H
 #define INVERTER_H
 #include <stdio.h>
 #include <stdlib.h>

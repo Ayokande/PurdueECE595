@@ -240,10 +240,8 @@ void printPostorderInverter(FILE* fp, struct Tnode* root){
     printPostorderInverter(fp, root->right);
     if(root->leaf == true){
         fprintf(fp,"%d(%.10le)\n", (root->sinkLabel), (root->sinkCapacitance));
-        //fprintf(stdout,"%d(%.10le)\n", (root->sinkLabel), (root->sinkCapacitance));
     } else{
         fprintf(fp,"(%.10le %.10le)\n", (root->wireLeft), (root->wireRight));
-        //fprintf(stdout,"(%.10le %.10le)\n", (root->wireLeft), (root->wireRight));
     }
 }
 

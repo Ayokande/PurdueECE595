@@ -17,15 +17,28 @@ int main(int argc, char *argv[])
     }
 
     FILE *out1_ptr = fopen(argv[2], "w");
+    if(out1_ptr == NULL)
+    {
+    	return EXIT_FAILURE;
+    }
     FILE *out2_ptr = fopen(argv[3], "w");
+    if(out2_ptr == NULL)
+    {
+    	return EXIT_FAILURE;
+    }
     int V;
     int E;
+    float** arr;
 
     struct Graph* graph = buildGraph(in_ptr, &V , &E);
-    //float** arr = createTable(graph);
+    //printf("GOING TO PRINT GRAPH\n");
+    //printGraph(in_ptr, graph, &V, &E);
+    //printf("GOING TO CREATE TABLE\n");
+    arr = createTable(out1_ptr, out2_ptr, graph, V, E);
+    //printTable(graph, arr, V, E);
+    freeTable(arr, V, E);
+    freeGraph(graph, V, E);
     
-    printf("HII\n");
-    //CLose all file pointers and free nodes
     fclose(in_ptr);
     fclose(out1_ptr);
     fclose(out2_ptr);

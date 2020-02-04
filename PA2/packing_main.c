@@ -19,15 +19,15 @@ int main(int argc, char* argv[]){
 
 
     struct Tnode* root = createNodeList(in_ptr);
-    //postOrder(stdout, root);
     getPacking(stdout, root);
     out1(out_ptr1, root);
     getCoor(root, 0, 0);
     out2(out_ptr2, root);
-    //sortAll(root, root);
-    //printf("\n");
-    //postOrder(stdout, root);
-
+    sortAll(root, root);
+    dynamicProg(root,root);
+    out3(out_ptr3, root);   
+    getBestCoor(root);
+    out4(out_ptr4, root);
     destroyTree(root);
 
     //CLose all file pointers

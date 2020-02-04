@@ -54,6 +54,7 @@ int main (int argc, char* argv[]){
     fclose(out2_ptr);
     fclose(out3_ptr);
     fclose(out4_ptr);
+    
     //Free all nodes to avoid memory issues
     destroyTree(root);
     destroyList(head);
